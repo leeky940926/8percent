@@ -52,7 +52,7 @@ class Test(TestCase):
             "password" : "1234"
         }
         access_token = jwt.encode({"id": data['id']}, SECRET_KEY, algorithm=ALGORITHM)
-        response     = client.post('/user/signin', json.dumps(data), content_type='applications/json')
+        response     = client.post('/users/signin', json.dumps(data), content_type='applications/json')
 
         self.assertEqual(response.json(),
             {
@@ -69,7 +69,7 @@ class Test(TestCase):
             "password" : "4125"
         }
 
-        response = client.post('/user/signin', json.dumps(data), content_type='applications/json')
+        response = client.post('/users/signin', json.dumps(data), content_type='applications/json')
 
         self.assertEqual(response.json(),
             {
@@ -86,7 +86,7 @@ class Test(TestCase):
             "password" : "412asd5"
         }
 
-        response = client.post('/user/signin', json.dumps(data), content_type='applications/json')
+        response = client.post('/users/signin', json.dumps(data), content_type='applications/json')
 
         self.assertEqual(response.json(),
             {
@@ -98,7 +98,7 @@ class Test(TestCase):
     def test_fail_key_error_in_signin(self):
         client = Client()
         data     = {}
-        response = client.post('/user/signin', json.dumps(data), content_type='applications/json')
+        response = client.post('/users/signin', json.dumps(data), content_type='applications/json')
 
         self.assertEqual(response.json(),
             {
