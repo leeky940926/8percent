@@ -415,3 +415,5 @@ zsdoc/data
 
 my_settings.py
 .github
+
+db_uploader.py
