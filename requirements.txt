@@ -1,0 +1,4 @@
+cryptography==35.0.0
+Django==3.2.9
+django-cors-headers==3.10.0
+PyJWT==2.3.0
