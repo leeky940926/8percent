@@ -10,7 +10,8 @@ from django.core.exceptions import ValidationError
 
 from deals.models           import (
     Account,
-    Deal, 
+    Deal2020,
+    Deal2021, 
     DealPosition
 )
 from users.utils            import login_decorator
@@ -38,7 +39,7 @@ class DealView(View):
     def post(self, request, account_id):
         try:
             data             = json.loads(request.body)
-            deal_position_id = data['deal_position_id']
+            deal_position_id = int(data['deal_position_id'])
             amount           = int(data['amount'])
             description      = data.get('description')
             user             = request.user
@@ -68,15 +69,17 @@ class DealView(View):
                     account.balance = last_balance
                     account.save()
             
-                Deal.objects.create(
+                Deal2021.objects.create(
                     account_id       = account_id,
                     deal_position_id = deal_position_id,
                     amount           = amount,
                     description      = description,
-                    balance          = last_balance
+                    balance          = account.balance
                 )
             
-            return JsonResponse({'before_balance' : before_balance, 'after_balance' : last_balance}, status=201)
+            after_balance = account.balance
+            
+            return JsonResponse({'before_balance' : before_balance, 'after_balance' : after_balance}, status=201)
                    
         except KeyError :
             return JsonResponse({'message' : 'KEY_ERROR'}, status=400)
@@ -110,8 +113,8 @@ class DealView(View):
             sort             = request.GET.get('sort')
             deal_position_id = request.GET.get('deal_position_id')
             page             = int(request.GET.get('page', 1))
-
-            page_size = 500
+            
+            page_size = 20
             limit     = page_size * page
             offset    = limit - page_size
 
@@ -126,19 +129,32 @@ class DealView(View):
                 CheckError.check_deal_position_id(deal_position_id)
                 
                 deal_filter.add(Q(deal_position_id = deal_position_id), Q.AND)
+            
+          
+            deals2020 = Deal2020.objects.select_related('deal_position').filter(deal_filter).order_by(sort_by.get(sort, '-created_at'))
+            deals2021 = Deal2021.objects.select_related('deal_position').filter(deal_filter).order_by(sort_by.get(sort, '-created_at'))
 
-            deals = Deal.objects.select_related('deal_position').filter(deal_filter).order_by(sort_by.get(sort, '-created_at'))[offset : limit]
-
-            data = [{
+            data2021 = [{
                 'id'            : deal.id,
                 'deal_position' : deal.deal_position.position,
                 'deal_date'     : deal.created_at.strftime('%Y-%m-%d %H:%M:%S'),
                 'deal_amount'   : deal.amount,
                 'deal_balance'  : deal.balance,
                 'description'   : deal.description,
-                } for deal in deals]
+                } for deal in deals2021]
 
-            return JsonResponse({'data' : data}, status = 200)
+            data2020 = [{
+                'id'            : deal.id,
+                'deal_position' : deal.deal_position.position,
+                'deal_date'     : deal.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+                'deal_amount'   : deal.amount,
+                'deal_balance'  : deal.balance,
+                'description'   : deal.description,
+                } for deal in deals2020]
+            
+            data = data2021 + data2020 if sort_by.get(sort, '-created_at') == '-created_at' else data2020 + data2021
+
+            return JsonResponse({'data' : data[offset:limit]}, status = 200)
         
         except KeyError:
             return JsonResponse({'message' : 'KEY_ERROR'}, status = 400)
