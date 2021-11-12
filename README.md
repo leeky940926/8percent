@@ -127,53 +127,51 @@ Unittest는 제공되는 test case를 기반으로 작성하였으며 그 외 �
 : 박현우("hyeon7200@naver.com")는 오늘 월급일 및 카드대금결제일이며, 입/출금이 잘 이루어졌는지 로그인해서 확인 해보려고 함
 입/출금은 구현된 API를 통해 거래내역에 추가되며, 마지막 시나리오에서 조회 예정
 
-박현우("hyeon7200@naver.com")는 팡팡은행(banks.id=5)과 나무은행(banks.id=6)에 계좌가 존재하며, 
-이번 테스트를 위해 만든 나무은행 계좌에서 입출금을 진행할 예정
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;박현우("hyeon7200@naver.com")는 팡팡은행(banks.id=5)과 나무은행(banks.id=6)에 계좌가 존재하며,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이번 테스트를 위해 만든 나무은행 계좌에서 입출금을 진행할 예정<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 나무은행에는 현재 1,000,000원의 잔액(accounts.balance)을 최초로 입금해놓은 상태
 
 
 1. 로그인
 
-1-1. 아이디 오입력
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1-1. 아이디 오입력
 
-이메일을 잘못 기억하고 있어서 "hyoen4@naver.com.com"로 입력 후 로그인 시도
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이메일을 잘못 기억하고 있어서 "hyoen4@naver.com.com"로 입력 후 로그인 시도
 
-1-2. 비밀번호 오입력
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1-2. 비밀번호 오입력
 
-비밀번호를 빠르게 입력하려다가 실수로 잘못된 비밀번호를 입력 후 로그인 시도
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀번호를 빠르게 입력하려다가 실수로 잘못된 비밀번호를 입력 후 로그인 시도
 
-1-3. 로그인 성공
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1-3. 로그인 성공
 
-이메일과 비밀번호를 올바르게 입력해서 로그인에 성공했으며, 토큰까지 발급 완료
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이메일과 비밀번호를 올바르게 입력해서 로그인에 성공했으며, 토큰까지 발급 완료
 
 
 2. 입금/출금
 
-2-1. 입금
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-1. 입금
 
-매월 12일은 월급날이며, 세후 수령액은 2,800,000원이다. 2,800,000을 계좌에 입금해줍니다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매월 12일은 월급날이며, 세후 수령액은 2,800,000원이다. 2,800,000을 계좌에 입금해줍니다.
 
-2-2. 출금
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-2. 출금
 
-매월 12일은 카드대금결제일이며, 이번 달 결제액은 800,000원이다. 800,000을 계좌체서 출금해.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매월 12일은 카드대금결제일이며, 이번 달 결제액은 800,000원이다. 800,000을 계좌체서 출금해.
 
-2-3. 잔액초과금액 출금
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-3. 잔액초과금액 출금
 
-현재 계좌에는 3,000,000원이 남아있는 상태이며, 4,000,000원 상당의 컴퓨터를 할부로 구매해야 되는데, 직원이 실수로 일시불결제를 누름
-이 때, 계좌잔액의 초과금액을 결제 요청한것이기 때문에 "CANNOT_REQUEST_EXCEED_BALANCE"라는 문구와 함께 에러코드는 400을 리턴
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현재 계좌에는 3,000,000원이 남아있는 상태이며, 4,000,000원 상당의 컴퓨터를 할부로 구매해야 되는데, 직원이 실수로 일시불결제를 누름<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 때, 계좌잔액의 초과금액을 결제 요청한것이기 때문에 "CANNOT_REQUEST_EXCEED_BALANCE"라는 문구와 함께 에러코드는 400을 리턴
 
 
 3. 거래내역 조회
 
-3-1. 입/출금 구분에 따른 조회
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3-1. 입/출금 구분에 따른 조회
 
-박현우는 이번 달에 월급외에 추가적으로 들어오는 부수입이 있는지 확인하고자, 순수 지출내역은 얼마인지 확인하고자 입/출금 내역에 따른 조회를 하려고 함
-(입금일 때, 출금일 때 데이터 셋 조회)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;박현우는 이번 달에 월급외에 추가적으로 들어오는 부수입이 있는지 확인하고자,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순수 지출내역은 얼마인지 확인하고자 입/출금 내역에 따른 조회를 하려고 함 (입금일 때, 출금일 때 데이터 셋 조회)
 
-3-2. 거래일시에 따른 조회
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3-2. 거래일시에 따른 조회
 
-박현우는 한달동안 친구의 결혼식이 두 번 있었기 때문에 축의금으로 꽤 지출한 돈이 많아서, 최근 1달 기준 거래내역을 조회해서 이번 달 마진이 얼만지 확인해보려고 함
-(최근 1달 거래내역 가져옴 및 페이지네이션)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;박현우는 한달동안 친구의 결혼식이 두 번 있었기 때문에 축의금으로 꽤 지출한 돈이 많아서,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;최근 1달 기준 거래내역을 조회해서 이번 달 마진이 얼만지 확인해보려고 함 (최근 1달 거래내역 가져옴 및 페이지네이션)
 
 ### 9. 거래내역이 1억건이 넘어갈 경우를 대비한 설정
 
