@@ -11,7 +11,7 @@ from deals.models import (
     Bank,
     Account,
     DealPosition,
-    Deal
+    Deal2021,
 )
 
 from eightpercent.settings import (
@@ -41,17 +41,17 @@ class DealViewTest(TestCase) :
         deal_position1 = DealPosition.objects.create(id=1, position='입금')
         deal_position2 = DealPosition.objects.create(id=2, position='출금')
         
-        deal1          = Deal.objects.create(id=1, account=account1, deal_position=deal_position1, amount=10000, balance=account1.balance+10000, description='입금입니다')
-        deal2          = Deal.objects.create(id=2, account=account1, deal_position=deal_position2, amount=10000, balance=account1.balance-10000, description='출금입니다')
-        deal3          = Deal.objects.create(id=3, account=account1, deal_position=deal_position1, amount=10000, balance=account1.balance+10000, description='입금입니다')
-        deal4          = Deal.objects.create(id=4, account=account1, deal_position=deal_position1, amount=10000, balance=account1.balance+10000, description='입금입니다')
+        deal1          = Deal2021.objects.create(id=1, account=account1, deal_position=deal_position1, amount=10000, balance=account1.balance+10000, description='입금입니다')
+        deal2          = Deal2021.objects.create(id=2, account=account1, deal_position=deal_position2, amount=10000, balance=account1.balance-10000, description='출금입니다')
+        deal3          = Deal2021.objects.create(id=3, account=account1, deal_position=deal_position1, amount=10000, balance=account1.balance+10000, description='입금입니다')
+        deal4          = Deal2021.objects.create(id=4, account=account1, deal_position=deal_position1, amount=10000, balance=account1.balance+10000, description='입금입니다')
         
     def tearDown(self) :
         User.objects.all().delete()
         Bank.objects.all().delete()
         Account.objects.all().delete()
         DealPosition.objects.all().delete()
-        Deal.objects.all().delete()
+        Deal2021.objects.all().delete()
     
     def test_deal_post_success(self):
         client = Client()

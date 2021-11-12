@@ -27,16 +27,30 @@ class DealPosition(models.Model):
     def __str__(self):
         return self.position
 
-class Deal(models.Model):
+class Deal2021(models.Model):
     account       = models.ForeignKey('Account', on_delete = models.CASCADE)
     deal_position = models.ForeignKey('DealPosition', on_delete = models.CASCADE)
     amount        = models.PositiveBigIntegerField()
     created_at    = models.DateTimeField(auto_now_add = True)
     balance       = models.PositiveBigIntegerField()
-    description   = models.CharField(max_length = 100)
+    description   = models.CharField(max_length = 100, null = True)
     
     class Meta:
-        db_table = 'deals'
+        db_table = 'deals2021'
+        indexes = [
+            models.Index(fields=['created_at'])
+        ]
+
+class Deal2020(models.Model):
+    account       = models.ForeignKey('Account', on_delete = models.CASCADE)
+    deal_position = models.ForeignKey('DealPosition', on_delete = models.CASCADE)
+    amount        = models.PositiveBigIntegerField()
+    created_at    = models.DateTimeField(auto_now_add = True)
+    balance       = models.PositiveBigIntegerField()
+    description   = models.CharField(max_length = 100, null = True)
+    
+    class Meta:
+        db_table = 'deals2020'
         indexes = [
             models.Index(fields=['created_at'])
         ]
