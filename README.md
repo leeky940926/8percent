@@ -69,7 +69,7 @@
 
 ### 4. 모델링
 
-![image](https://user-images.githubusercontent.com/75020336/141411964-a32b7190-5430-4eb3-b34f-f5b4c2bd8de6.png)
+![8persent (1)](https://user-images.githubusercontent.com/61782539/141447955-25afbac0-808d-457e-812d-83b4376d9d90.png)
 
 -----
 
