@@ -77,7 +77,9 @@
 
 ### 5. Postman API 테스트
 
-### API 테스트 : https://documenter.getpostman.com/view/17715735/UVC8B5hr
+### API 테스트 : https://www.postman.com/cloudy-resonance-766003/workspace/8percent/collection/17715735-79c01c1b-885b-48f9-a9a2-1b9b12a24055
+
+### API 명세서 : https://documenter.getpostman.com/view/17715735/UVC8B5hr
 
 -----
 
