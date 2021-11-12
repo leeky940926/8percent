@@ -177,11 +177,21 @@ Unittest는 제공되는 test case를 기반으로 작성하였으며 그 외 �
 
 데이터의 허수 용량 차지 방지 뿐만 아니라 사용공간 확보를 틈틈이 해주기 위해 VACUUM을 사용했습니다.
 
+우선, 용량 확인을 위해 manage.py가 있는 디렉토리에서 ```ls -al```을 입력해줍니다.
+
 ![](https://user-images.githubusercontent.com/88086271/141416947-0d02def3-cfa9-4961-9767-56db730fa91e.png)
+
+```sqlite3```을 실행하고, 저는 데이터가 가장 많은 테이블을 삭제했습니다.
+
+![](https://user-images.githubusercontent.com/88086271/141417208-c4198d1a-a4ff-44ea-abad-3734fa10674b.png)
+
+```sqlite3```을 종료하고 
+
+![](https://user-images.githubusercontent.com/88086271/141417351-521f74a8-8f67-40b5-bdb2-cd7134e6a5e0.png)
 
 
 
 
 ### 10. Reference
 
-이 프로젝트는 원티드x위코드 백엔드 프리온보딩 과제 일환으로 원티드랩(wantedlab)에서 출제한 과제를 기반으로 만들었습니다.
+이 프로젝트는 원티드x위코드 백엔드 프리온보딩 과제 일환으로 8퍼센트(eightpercent)에서 출제한 과제를 기반으로 만들었습니다.
