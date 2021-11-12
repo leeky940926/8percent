@@ -1,7 +1,7 @@
 import json
 import jwt
 
-from django.test import TestCase, Client
+from django.test           import TestCase, Client
 
 from users.models          import User
 from eightpercent.settings import SECRET_KEY, ALGORITHM
@@ -51,7 +51,7 @@ class Test(TestCase):
             "email"    : "test1@naver.com",
             "password" : "1234"
         }
-        access_token = jwt.encode({"id": data['id']}, SECRET_KEY, algorithm=ALGORITHM)
+        access_token = jwt.encode({"user_id": data['id']}, SECRET_KEY, algorithm=ALGORITHM)
         response     = client.post('/users/signin', json.dumps(data), content_type='applications/json')
 
         self.assertEqual(response.json(),

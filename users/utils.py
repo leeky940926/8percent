@@ -9,14 +9,14 @@ def login_decorator(func):
     def wrapper(self, request, *args, **kwargs):
         try:
             access_token = jwt.decode(request.headers.get('Authorization'), SECRET_KEY, algorithms=ALGORITHM)
-            user         = User.objects.get(id = access_token['id'])
+            user         = User.objects.get(id = access_token['user_id'])
             request.user = user
 
         except User.DoesNotExist:
-            return JsonResponse({'message' : 'USER_DOES_NOT_EXIST'}, status = 400)
+            return JsonResponse({'message' : 'USER_DOES_NOT_EXIST'}, status = 401)
 
         except jwt.DecodeError:
-            return JsonResponse({'message' : 'UNKNOWN_USER'}, status = 400)
+            return JsonResponse({'message' : 'UNKNOWN_USER'}, status = 401)
 
         except jwt.ExpiredSignatureError:
             return JsonResponse({'message' : 'EXPIRED_TOKEN'}, status = 400)
