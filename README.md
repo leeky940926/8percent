@@ -257,7 +257,7 @@ architect partition: result: successfully (re)configured the database for the fo
 
 후에 constraint에 설정된 범위에 따라 여러 범위의 id값을 가진 user를 생성해보았지만 User 테이블에 파티션이 적용되지 않았습니다.
 
- Architect의 공식문서를 찾아보니 PostgreSQL과 MySQL 두 db를 지원하고 sqlite3는 지원하지 않는 것으로 보였습니다.
+Architect의 공식문서를 찾아보니 PostgreSQL과 MySQL 두 db를 지원하고 sqlite3는 지원하지 않는다는 것을 알았습니다.
 
 - Supported DBs
   - [PostgreSQL](https://www.postgresql.org/) >= 8.0
