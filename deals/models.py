@@ -31,9 +31,12 @@ class Deal(models.Model):
     account       = models.ForeignKey('Account', on_delete = models.CASCADE)
     deal_position = models.ForeignKey('DealPosition', on_delete = models.CASCADE)
     amount        = models.PositiveBigIntegerField()
-    created_at    = models.DateTimeField(auto_now_add = True, db_index = True)
+    created_at    = models.DateTimeField(auto_now_add = True)
     balance       = models.PositiveBigIntegerField()
     description   = models.CharField(max_length = 100)
     
     class Meta:
         db_table = 'deals'
+        indexes = [
+            models.Index(fields=['created_at'])
+        ]
