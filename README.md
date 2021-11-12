@@ -202,7 +202,7 @@ Query Parameter의 'sort' key로 최신순, 오래된순 정렬이 가능하도�
 
 [![img](https://user-images.githubusercontent.com/88086271/141416947-0d02def3-cfa9-4961-9767-56db730fa91e.png)](https://user-images.githubusercontent.com/88086271/141416947-0d02def3-cfa9-4961-9767-56db730fa91e.png)
 
-`sqlite3`을 실행하고, 저는 데이터가 가장 많은 테이블을 삭제했습니다.
+`sqlite3`을 실행하고, 데이터가 가장 많은 테이블을 삭제했습니다.
 
 [![img](https://user-images.githubusercontent.com/88086271/141417208-c4198d1a-a4ff-44ea-abad-3734fa10674b.png)](https://user-images.githubusercontent.com/88086271/141417208-c4198d1a-a4ff-44ea-abad-3734fa10674b.png)
 
