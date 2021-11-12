@@ -185,10 +185,13 @@ Unittest는 제공되는 test case를 기반으로 작성하였으며 그 외 �
 
 ![](https://user-images.githubusercontent.com/88086271/141417208-c4198d1a-a4ff-44ea-abad-3734fa10674b.png)
 
-```sqlite3```을 종료하고 
+```sqlite3```을 종료하고 용량을 확인해보면, 테이블을 삭제했음에도 불구하고 그대로인 걸 확인할 수 있습니다.
 
 ![](https://user-images.githubusercontent.com/88086271/141417351-521f74a8-8f67-40b5-bdb2-cd7134e6a5e0.png)
 
+```sqlite3```에 접속해서 ```vacuum```을 입력 후 다시 나와서 ```ls -al```을 입력해보면
+
+![](https://user-images.githubusercontent.com/88086271/141417656-d8132fdf-0c46-4115-a6e1-cb5696665529.png)
 
 
 
