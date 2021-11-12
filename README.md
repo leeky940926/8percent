@@ -147,17 +147,14 @@ Unittest는 제공되는 test case를 기반으로 작성하였으며 그 외 �
 2. 입금/출금
 
 2-1. 입금
-매월 12일은 월급날이며, 세후 수령액은 2,800,000원임
-(bank_id=5, account_id=29, deal_position_id=1, amount=2800000, description="10월 급여" 로 request.body 작성해서 테스트)
+매월 12일은 월급날이며, 세후 수령액은 2,800,000원이다. 2,800,000을 계좌에 입금해줍니다.
 
 2-2. 출금
-매월 12일은 카드대금결제일이며, 이번 달 결제액은 80,0000원임
-(bank_id=5, account_id=29, deal_position_id=2, amount=800000, description="11월 카드대금결제" 로 request.body 작성해서 테스트)
+매월 12일은 카드대금결제일이며, 이번 달 결제액은 800,000원이다. 800,000을 계좌체서 출금해.
 
 2-3. 잔액초과금액 출금
 현재 계좌에는 3,000,000원이 남아있는 상태이며, 4,000,000원 상당의 컴퓨터를 할부로 구매해야 되는데, 직원이 실수로 일시불결제를 누름
 이 때, 계좌잔액의 초과금액을 결제 요청한것이기 때문에 "CANNOT_REQUEST_EXCEED_BALANCE"라는 문구와 함께 에러코드는 400을 리턴
-(bank_id=5, account_id=29, deal_position_id=2, amount=4000000, description="컴퓨터 구매" 로 request.body 작성해서 테스트)
 
 
 3. 거래내역 조회
