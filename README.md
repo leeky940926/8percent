@@ -71,17 +71,13 @@
 
 ### 4. 모델링
 
-![wanted](https://user-images.githubusercontent.com/79758688/140933586-1de78372-10d8-47b4-b7f7-f7b3f3ab8baf.png)
+![image](https://user-images.githubusercontent.com/75020336/141411964-a32b7190-5430-4eb3-b34f-f5b4c2bd8de6.png)
 
 -----
 
-### 5. Postman API 명세서, API 테스트
+### 5. Postman API 테스트
 
-### **API 명세서 :** https://www.postman.com/cloudy-resonance-766003/workspace/wantedlab/documentation/17663987-d2ec5eec-6685-4218-824f-144f1c8b6a6f
-
-
-
-### API 테스트 : https://www.postman.com/cloudy-resonance-766003/workspace/wantedlab
+### API 테스트 : https://documenter.getpostman.com/view/17715735/UVC8B5hr
 
 -----
 
