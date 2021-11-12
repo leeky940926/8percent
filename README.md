@@ -91,7 +91,7 @@
 
 받아오는 key 값이 일치하지 않을 시 400 code를 return 해줍니다.
 
-### POST /deals (입출금)
+### POST /deals/account_id (입출금)
 
 deal_position 테이블을 따로 분리해 입금은 id=1, 출금은 id=2로 구분 하여 한 url안에서
 입출금이 둘 다 구현되도록 하였습니다.
