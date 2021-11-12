@@ -117,12 +117,12 @@ description을 만들어서 적요를 표현하였습니다.
 각 시나리오별 테스트 예시는 상단에 기술한 포스트맨 API명세서에 기술되어 있습니다.
 
 0. 시나리오
-: 박현우("hyeon7200@naver.com")는 오늘 월급일 및 카드대금결제일이며, 입/출금이 잘 이루어졌는지 로그인해서 확인 해보려고 함<br>
+: 박현우(user1@8percent.com)는 오늘 월급일 및 카드대금결제일이며, 입/출금이 잘 이루어졌는지 로그인해서 확인 해보려고 함<br>
 입/출금은 구현된 API를 통해 거래내역에 추가되며, 마지막 시나리오에서 조회 예정
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;박현우("hyeon7200@naver.com")는 팡팡은행(banks.id=5)과 나무은행(banks.id=6)에 계좌가 존재하며,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이번 테스트를 위해 만든 나무은행 계좌에서 입출금을 진행할 예정<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-나무은행에는 현재 1,000,000원의 잔액(accounts.balance)을 최초로 입금해놓은 상태
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;박현우(user1@8percent.com)는 팡팡은행에 계좌가 존재하며,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이번 테스트를 위해 만든 팡팡은행 계좌에서 입출금을 진행할 예정<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+팡팡은행에는 현재 1,000,000원의 잔액(accounts.balance)을 최초로 입금해놓은 상태
 
 
 1. 로그인
@@ -144,16 +144,16 @@ description을 만들어서 적요를 표현하였습니다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-1. 입금
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매월 12일은 월급날이며, 세후 수령액은 2,800,000원이다. 2,800,000을 계좌에 입금해줍니다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매월 12일은 월급날이며, 세후 수령액은 2,800,000원이다. 2,800,000을 계좌에 입금한다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-2. 출금
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매월 12일은 카드대금결제일이며, 이번 달 결제액은 800,000원이며 해당  계좌에서 출금.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;오늘 부모님 용돈을 드리기 위해서 800,000원을 출금한다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-3. 잔액초과금액 출금
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현재 계좌에는 3,000,000원이 남아있는 상태이며, 4,000,000원 상당의 컴퓨터를 할부로 구매해야 되는데, 직원이 실수로 일시불결제를 누름<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 때, 계좌잔액의 초과금액을 결제 요청한것이기 때문에 "CANNOT_REQUEST_EXCEED_BALANCE"라는 문구와 함께 에러코드는 400을 리턴
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현재 계좌에는 3,000,000원이 남아있는 상태이며, 실수로 잔액보다 큰 금액을 출금 요청함.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 때, 계좌잔액의 초과금액을 결제 요청한것이기 때문에 "INSUFFICIENT_BALANCE"라는 문구와 함께 에러코드는 400을 리턴
 
 
 3. 거래내역 조회
