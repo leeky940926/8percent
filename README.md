@@ -108,12 +108,7 @@ description을 만들어서 적요를 표현하였습니다.
 
 ### 7. Unittest 결과
 
-Unittest는 제공되는 test case를 기반으로 작성하였으며 그 외 요청 실패 사례들을 추가하였습니다.
-
-> ### users app Unit Test
-![image](https://user-images.githubusercontent.com/75020336/141413507-dfe89234-cb7d-4226-be45-4c04b08ade15.png)
-
-> ### deals app Unit Test
+<img width="583" alt="스크린샷 2021-11-12 오후 6 56 58" src="https://user-images.githubusercontent.com/61782539/141448154-870549e2-ccf1-4328-ac35-794d84f516b8.png">
 
 -----
 
