@@ -91,7 +91,7 @@
 
 받아오는 key 값이 일치하지 않을 시 400 code를 return 해줍니다.
 
-### POST /deals (입 출금)
+### POST /deals (입출금)
 
 deal_position 테이블을 따로 분리해 입금은 id=1, 출금은 id=2로 구분 하여 한 url안에서
 입출금이 둘 다 구현되도록 하였습니다.
@@ -153,7 +153,7 @@ Unittest는 제공되는 test case를 기반으로 작성하였으며 그 외 �
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-2. 출금
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매월 12일은 카드대금결제일이며, 이번 달 결제액은 800,000원이다. 800,000을 계좌체서 출금해.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매월 12일은 카드대금결제일이며, 이번 달 결제액은 800,000원이며 해당  계좌에서 출금.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2-3. 잔액초과금액 출금
 
