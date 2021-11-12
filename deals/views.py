@@ -113,6 +113,7 @@ class DealView(View):
             sort             = request.GET.get('sort')
             deal_position_id = request.GET.get('deal_position_id')
             page             = int(request.GET.get('page', 1))
+            start_year       = int(start_date.split('-')[0])
             
             page_size = 20
             limit     = page_size * page
@@ -130,8 +131,20 @@ class DealView(View):
                 
                 deal_filter.add(Q(deal_position_id = deal_position_id), Q.AND)
             
-          
-            deals2020 = Deal2020.objects.select_related('deal_position').filter(deal_filter).order_by(sort_by.get(sort, '-created_at'))
+            data2020 = []
+            
+            if start_year == 2020:
+                deals2020 = Deal2020.objects.select_related('deal_position').filter(deal_filter).order_by(sort_by.get(sort, '-created_at'))
+
+                data2020 = [{
+                'id'            : deal.id,
+                'deal_position' : deal.deal_position.position,
+                'deal_date'     : deal.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+                'deal_amount'   : deal.amount,
+                'deal_balance'  : deal.balance,
+                'description'   : deal.description,
+                } for deal in deals2020]
+            
             deals2021 = Deal2021.objects.select_related('deal_position').filter(deal_filter).order_by(sort_by.get(sort, '-created_at'))
 
             data2021 = [{
@@ -142,15 +155,6 @@ class DealView(View):
                 'deal_balance'  : deal.balance,
                 'description'   : deal.description,
                 } for deal in deals2021]
-
-            data2020 = [{
-                'id'            : deal.id,
-                'deal_position' : deal.deal_position.position,
-                'deal_date'     : deal.created_at.strftime('%Y-%m-%d %H:%M:%S'),
-                'deal_amount'   : deal.amount,
-                'deal_balance'  : deal.balance,
-                'description'   : deal.description,
-                } for deal in deals2020]
             
             data = data2021 + data2020 if sort_by.get(sort, '-created_at') == '-created_at' else data2020 + data2021
 
