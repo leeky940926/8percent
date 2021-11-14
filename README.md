@@ -2,7 +2,7 @@
 
 # 배포 주소 : 3.143.233.195:8000
 
-# 1. [TEAM] WithCODE
+# 1. [TEAM] WithCODE 소개 및 본인 소개
 
 #### Members
 
@@ -15,7 +15,32 @@
 | 이기용 | https://github.com/leeky940926 |
 | 이정아 | https://github.com/wjddk97     |
 
+
+#### 본인소개
+
+안녕하세요.
+
+위코드x원티드 백엔드 프리온보딩과정 교육생 이기용입니다.
+
+해당 Git Repository는 11월 11일 ~ 11월 13일까지 8percent 기업과제 내용이 담겨져 있습니다.
+
+최초의 Git Repository링크는 https://github.com/maxkmh712/8percent.git 이며,
+
+제 Repository로 Fork를 했습니다.
+
+이번 과제에서 저는 3가지 역할을 맡았습니다.
+
+1. 입/출금API 구현 및 Unit Test
+2. VACUUM을 이용한 sqlite 용량 최적화 방안 제시
+3. Functional Test를 위한 시나리오 작성
+
+아래엔 구현 내용에 대한 상세설명이 작성되어 있습니다.
+
+읽어주셔서 감사합니다.
+
 ------
+
+
 
 # 2. 과제
 
